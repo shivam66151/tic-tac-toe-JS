@@ -49,16 +49,15 @@ function handlePlayerChange() {
 
 function handleResultValidation() {
     let roundWon = false;
-    for (let i = 0; i <= 9; i++) {
+    for (let i = 0; i <= 7; i++) {
         const winCondition = winningConditions[i];
         let a = gameState[winCondition[0]];
         let b = gameState[winCondition[1]];
         let c = gameState[winCondition[2]];
-        let d = gameState[winCondition[3]];
-        if (a === '' || b === '' || c === '' || d === '') {
+        if (a === '' || b === '' || c === '') {
             continue;
         }
-        if (a === b && b === c && c === d) {
+        if (a === b && b === c) {
             roundWon = true;
             break
         }
@@ -106,12 +105,6 @@ or if the game is paused. If either of those is true we will simply ignore the c
 
     handleCellPlayed(clickedCell, clickedCellIndex);
     handleResultValidation();
-}
-if ( currentPlayer == "X" ) { 
-    document.querySelectorAll('.cell')[clickedCellIndex].style.color = "blue";
-}else{
-    document.querySelectorAll('.cell')[clickedCellIndex].style.color = "red";
-}
 }
 
 function handleRestartGame() {
