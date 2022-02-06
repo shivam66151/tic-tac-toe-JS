@@ -40,7 +40,7 @@ as well as update the user interface to reflect the played move
 */
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
-// Setting color for every player
+/* Setting color for every player */
     if ( currentPlayer == "X" ) { 
         document.querySelectorAll('.cell')[clickedCellIndex].style.color = "blue";
     }else{
